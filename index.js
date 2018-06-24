@@ -1,7 +1,6 @@
 const Twitter = require('twitter');
 const config = require('./config');
 const T = new Twitter(config);
-const Promise = require('promise');
 const MongoClient = require('mongodb').MongoClient;
 
 //-------------------------------------------------------------------
