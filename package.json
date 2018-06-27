@@ -1,13 +1,23 @@
 {
-  "name": "collect-users",
+  "name": "collect-twitter-users",
   "version": "1.0.0",
-  "description": "",
+  "description": "Collect Twitter users or clone an existing Twitter list to your account.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "",
+  "author": "ViNo G",
+  "keywords": [
+    "Twitter",
+    "Twitter List",
+    "Twitter Users Data",
+    "mongodb"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://github.com/vinog-git/collect-twitter-users"
+  },
   "license": "ISC",
   "dependencies": {
     "twitter": "^1.7.1"

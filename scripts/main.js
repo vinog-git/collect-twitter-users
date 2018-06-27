@@ -1,0 +1,1 @@
+console.log('./scripts/main.js is included');
