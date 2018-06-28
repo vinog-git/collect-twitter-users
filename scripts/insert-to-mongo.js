@@ -1,14 +1,15 @@
 const MongoClient = require('mongodb').MongoClient;
 
-function insertIntoMongo(db_name, collection_name, records) {
-    let url = process.env.mongo_key || "mongodb://localhost:27017";
+function insertIntoMongo(collection_name, records) {
+    
+    let url = require('../config').mongo_key;
     MongoClient.connect(url, (err, db) => {
         if (err) throw err;
-        let dbo = db.db(db_name);
+        let dbo = db.db('twitter');
         dbo.createCollection(collection_name, (err, res) => {
             if (err) throw err;
             dbo.collection(collection_name).insertMany(records, (err, res) => {
-                if (err) throw err;
+                if (err) throw new Error(err);
                 console.log(`${res.insertedCount} records inserted.\nDone.`);
                 db.close();
             });
@@ -16,7 +17,7 @@ function insertIntoMongo(db_name, collection_name, records) {
     });
 }
 if (require.main === module) {
-    insertIntoMongo(process.argv[2], process.argv[3], process.argv[4]);
+    insertIntoMongo(process.argv[3], process.argv[4]);
 } else {
     module.exports = insertIntoMongo;
 }

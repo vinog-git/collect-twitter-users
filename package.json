@@ -20,9 +20,10 @@
   },
   "license": "ISC",
   "dependencies": {
-    "twitter": "^1.7.1"
+    "twitter": "^1.7.1",
+    "mongodb": "^3.0.10"
   },
   "devDependencies": {
-    "mongodb": "^3.0.10"
+    
   }
 }
