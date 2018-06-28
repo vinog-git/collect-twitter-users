@@ -9,7 +9,7 @@ function insertIntoMongo(collection_name, records) {
         dbo.createCollection(collection_name, (err, res) => {
             if (err) throw err;
             dbo.collection(collection_name).insertMany(records, (err, res) => {
-                if (err) throw new Error(err);
+                if (err) throw new Error(JSON.stringify(err));
                 console.log(`${res.insertedCount} records inserted.\nDone.`);
                 db.close();
             });

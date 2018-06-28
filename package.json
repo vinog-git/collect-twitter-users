@@ -23,7 +23,5 @@
     "twitter": "^1.7.1",
     "mongodb": "^3.0.10"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }

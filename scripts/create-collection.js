@@ -18,7 +18,7 @@ let options = {
 function createCollection(query) {
     options.q = query;
     T.get('users/search', options, (err, response) => {
-        if (err) throw new Error(err);
+        if (err) throw new Error(JSON.stringify(err));
         records = checkDuplicate(records, response);
         if (!isDuplicate && !isEmpty && options.page < 50) {
             console.log(`${records.length} records received till now...`);
